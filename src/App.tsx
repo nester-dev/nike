@@ -1,7 +1,11 @@
-import Hello from '~/components/Hello';
+import Hero from '~/components/Hero';
 
 function App() {
-  return <Hello />;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }
 
 export default App;
