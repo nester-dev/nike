@@ -15,3 +15,20 @@ export interface IHeroApi {
   videos: video[];
   sociallinks: link[];
 }
+
+export interface ISneakers {
+  id: string;
+  title: string;
+  text: string;
+  rating: string;
+  btn: string;
+  img: string;
+  price: string;
+  color: string;
+  shadow: string;
+}
+
+export interface ISales {
+  title: string;
+  items: ISneakers[];
+}

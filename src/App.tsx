@@ -1,11 +1,12 @@
-import Hero from '~/components/Hero';
-import { heroapi } from '~/data/data';
+import { Hero, Sales } from '~/components';
+import { heroapi, popularsales, topratesales } from '~/data/data';
 
 function App() {
-  console.log(heroapi);
   return (
-    <main>
+    <main className='flex flex-col gap-16 relative'>
       <Hero heroApi={heroapi} />
+      <Sales endpoint={popularsales} isPopular />
+      <Sales endpoint={topratesales} />
     </main>
   );
 }

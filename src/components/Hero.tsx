@@ -23,7 +23,7 @@ const Hero: React.FC<{ heroApi: IHeroApi }> = ({
           >
             {btntext}
           </button>
-          <div className='absolute grid items-center gap-5 md:gap-3 top-[33vh] lg:top-[27vh] left-[-11%] xl:left-0 w-auto h-auto'>
+          <div className='absolute grid items-center gap-5 md:gap-3 top-[33vh] lg:top-[27vh] left-[11%] xl:left-0 w-auto h-auto'>
             {videos?.map((video, idx) => (
               <Clips key={idx} imgsrc={video.imgsrc} clip={video.clip} />
             ))}
