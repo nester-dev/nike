@@ -32,3 +32,12 @@ export interface ISales {
   title: string;
   items: ISneakers[];
 }
+
+export interface ITextContent {
+  heading: string;
+  title: string;
+  text: string;
+  btn: string;
+  url: string;
+  img: string;
+}
