@@ -41,3 +41,19 @@ export interface ITextContent {
   url: string;
   img: string;
 }
+
+interface INews {
+  title: string;
+  text: string;
+  img: string;
+  url: string;
+  like: string;
+  time: string;
+  by: string;
+  btn: string;
+}
+
+export interface IStory {
+  title: string;
+  news: INews[];
+}
