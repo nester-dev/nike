@@ -11,9 +11,9 @@ const Footer = () => {
               <img className='object-contain' src={logo} alt='logo' />
             </div>
             <p className='text-xs'>
-              The Nike Store is a project developed using React and Typescript. Implemented the
-              functionality of adding items to cart, as well as all the logic associated with the
-              cart.
+              The Nike Store is a project developed using React, Redux toolkit and Typescript.
+              Implemented the functionality of adding items to cart, as well as all the logic
+              associated with the cart.
             </p>
           </div>
           <div>
