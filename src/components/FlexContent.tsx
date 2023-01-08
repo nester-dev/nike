@@ -12,6 +12,7 @@ const FlexContent: FC<FlexContentProps> = ({
 }) => {
   return (
     <div
+      id={isExists ? 'highlights' : 'featured'}
       className={`flex justify-between items-center lg:flex-col lg:justify-center nike-container ${
         isExists ? 'flex flex-row-reverse' : 'flex-row'
       }`}

@@ -10,7 +10,7 @@ interface ISalesProps {
 
 const Sales: FC<ISalesProps> = ({ isPopular, endpoint: { title, items } }) => {
   return (
-    <div className='nike-container'>
+    <div className='nike-container' id={isPopular ? 'popular' : 'rated'}>
       <Title title={title} />
       <div
         className={`grid items-center justify-items-center gap-7 lg:gap-5 mt-7 ${
