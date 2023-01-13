@@ -76,5 +76,9 @@
   .transitions-theme {
     @apply transition-all duration-700 ease-in-out cursor-pointer;
   }
+}
 
+.lock {
+  overflow: hidden;
+  touch-action: none;
 }

@@ -1,8 +1,12 @@
 import logo from '../assets/logo.png';
 import { HeartIcon, MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
+import { useToggleCart } from '~/components/hooks/useToggleCart';
+import { useAppSelector } from '~/components/hooks/useAppSelector';
 const Navbar = () => {
+  const toggleCart = useToggleCart();
   const [navState, setNavState] = useState(false);
+  const { cartItems } = useAppSelector((state) => state.cart);
 
   const onPageScroll = () => {
     window.scrollY > 30 ? setNavState(true) : setNavState(false);
@@ -49,6 +53,7 @@ const Navbar = () => {
             <button
               className='border-none outline-none active:scale-110 transition-all relative duration-300'
               type='button'
+              onClick={() => toggleCart(true)}
             >
               <ShoppingBagIcon
                 className={`icon-style hover:scale-110 transition-all duration-300 ${
@@ -62,7 +67,7 @@ const Navbar = () => {
                     : 'bg-slate-100 text-slate-900 shadow-slate-900'
                 }`}
               >
-                0
+                {cartItems.length}
               </div>
             </button>
           </li>

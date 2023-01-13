@@ -1,7 +1,9 @@
 import emptybag from '../../assets/emptybag.png';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import { useToggleCart } from '~/components/hooks/useToggleCart';
 
 const CartEmpty = () => {
+  const toggleCart = useToggleCart();
   return (
     <div className='flex items-center justify-center flex-col h-screen px-11 text-center gap-7'>
       <img
@@ -10,6 +12,7 @@ const CartEmpty = () => {
         alt='empty bag'
       />
       <button
+        onClick={() => toggleCart(false)}
         className='button-theme bg-gradient-to-b from-amber-500 to-orange-500 shadow-lg shadow-orange-500 flex items-center justify-center text-slate-900 py-2 gap-3 text-sm px-5 font-semibold active:scale-110'
         type='button'
       >

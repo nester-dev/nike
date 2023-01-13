@@ -26,6 +26,7 @@ export interface ISneakers {
   price: string;
   color: string;
   shadow: string;
+  quantity?: number;
 }
 
 export interface ISales {
@@ -56,4 +57,9 @@ interface INews {
 export interface IStory {
   title: string;
   news: INews[];
+}
+
+export interface ICartState {
+  isOpen: boolean;
+  cartItems: ISneakers[];
 }

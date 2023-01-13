@@ -1,5 +1,8 @@
 import { ISneakers } from '~/types/types';
 import { ShoppingBagIcon, StarIcon } from '@heroicons/react/24/solid';
+import { useAppDispatch } from '~/components/hooks/useAppDispatch';
+import { addToCart } from '~/app/CartSlice';
+import { useToggleCart } from '~/components/hooks/useToggleCart';
 
 interface IItemProps {
   isPopular?: boolean;
@@ -8,10 +11,21 @@ interface IItemProps {
 
 const Item = ({
   isPopular,
-  item: { color, shadow, title, text, img, btn, rating, price },
+  item: { id, color, shadow, title, text, img, btn, rating, price },
 }: IItemProps) => {
+  const dispatch = useAppDispatch();
+  const openCart = useToggleCart();
+
+  const onAddToCart = () => {
+    const item = { id, color, shadow, title, text, img, btn, rating, price };
+
+    dispatch(addToCart(item));
+    openCart(true);
+  };
+
   return (
     <div
+      id={id}
       className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center ${
         isPopular ? 'justify-items-start' : 'justify-items-center'
       } rounded-xl py-4 px-5 transition-all duration-700 ease-in-out w-full hover:scale-105`}
@@ -40,12 +54,14 @@ const Item = ({
           <button
             className='bg-white opacity-90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200'
             type='button'
+            onClick={() => onAddToCart()}
           >
             <ShoppingBagIcon className='icon-style text-slate-900' />
           </button>
           <button
             className='bg-white opacity-90 blur-effect-theme button-theme px-2 py-1 shadow shadow-sky-200 text-sm text-black'
             type='button'
+            onClick={() => onAddToCart()}
           >
             {btn}
           </button>

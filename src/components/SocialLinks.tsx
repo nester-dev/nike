@@ -1,4 +1,3 @@
-import React from 'react';
 import { link } from '~/types/types';
 
 const SocialLinks = ({ icon }: link) => {
